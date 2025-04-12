@@ -17,7 +17,7 @@ const baseNavItems: Array<NavItem> = [
     },
 ];
 
-export default (currentPath) => {
+export default (currentPath: string) => {
     return useMemo<Array<NavItem>>(() => {
         return baseNavItems.map(item => {
             item.isActive = item.path === currentPath;

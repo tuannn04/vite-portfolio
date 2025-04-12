@@ -4,7 +4,7 @@ import React from "react";
 const About = React.lazy(() => import("../pages/About.tsx"));
 
 type AppRouterProps = {
-    header: JSX.Element
+    header: React.ReactNode
 }
 
 export default ({header: HeaderComponent}: AppRouterProps) => {

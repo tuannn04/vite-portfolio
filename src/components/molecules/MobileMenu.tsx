@@ -1,14 +1,14 @@
-import {ForwardedRef, forwardRef, useMemo} from "react";
-import {NavItem} from "../../../hooks/useNavItems.ts";
-import {NavLink} from "react-router";
+import {ForwardedRef, forwardRef} from "react";
+import {NavItem} from "../../hooks/useNavItems";
 import {NavLinkRenderProps} from "react-router-dom";
+import MenuItem from "../atoms/MenuItem";
 
 type SidebarProps = {
     isShowMenu: boolean,
     navItems: Array<NavItem>
 }
 
-const getNavClassName = (({isActive}: NavLinkRenderProps): string => {
+const getLinkClassName = (({isActive}: NavLinkRenderProps): string => {
     return isActive ? 'font-bold' : '';
 })
 
@@ -20,14 +20,10 @@ export default forwardRef<HTMLDivElement, SidebarProps>(
                 <nav className={`bg-[#333333] max-h-[0px] overflow-hidden h-auto duration-1000 ease-in-out ${maxHClass}`
                   }
                      ref={ref}>
-                    <div>
+                    <div className={"flex flex-col gap-2 text-xl py-2"}>
                         {
                             navItems.map(({path, label}: NavItem, index) => (
-                                <p className={'ml-5 mr-5 pb-4 text-center'} key={index}>
-                                    <NavLink to={path} className={getNavClassName}>
-                                        {label}
-                                    </NavLink>
-                                </p>
+                                <MenuItem to={path} className={""} key={index}>{label}</MenuItem>
                             ))
                         }
                     </div>
