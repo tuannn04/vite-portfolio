@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useEventListener } from "usehooks-ts";
 
-export default (animationDuration?: number) => {
+export default () => {
+    const animationDuration = 300;
     const menuIconRef = useRef<HTMLDivElement | null>(null);
     const menuSideBarRef = useRef<HTMLDivElement | null>(null);
     const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
@@ -18,7 +19,7 @@ export default (animationDuration?: number) => {
         clearAnimationTimeout();
     }, [setIsShowMenu, setIsShowingHalf, animationTimeout]);
 
-    const closeMenu = useCallback((event: Event) => {
+    const closeMenu = useCallback((event: Event): void => {
         if (isShowMenu &&
             event.target instanceof Node &&
             !menuIconRef.current?.contains(event.target) &&
@@ -39,5 +40,5 @@ export default (animationDuration?: number) => {
     useEventListener('click', showMenu, menuIconRef);
     useEventListener('click', closeMenu);
 
-    return { menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf }
+    return { menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, closeMenu }
 }

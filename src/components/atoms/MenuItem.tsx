@@ -1,9 +1,9 @@
 import { NavLink, NavLinkProps } from "react-router-dom"
 
-export default ({to, className, children}: NavLinkProps) => {
+export default ({children, ...rest}: NavLinkProps) => {
     return (
         <p className={'text-center'}>
-            <NavLink to={to} className={className}>
+            <NavLink {...rest}>
                 {children}
             </NavLink>
         </p>
