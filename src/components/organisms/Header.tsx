@@ -1,5 +1,5 @@
-import Logo from "../atoms/Logo";
-import DesktopMenu from "../molecules/DesktopMenu.tsx";
+import Logo from "../molecules/Logo";
+import DesktopMenu from "../molecules/DesktopMenu";
 import {useLocation} from "react-router-dom";
 import useNavItems from "../../hooks/useNavItems";
 import BurgerMenu from "../molecules/BurgerMenu";
@@ -21,9 +21,11 @@ export default (): React.ReactNode => {
             <div className={"flex justify-between items-center px-main-padding py-2 h-12"}>
                 <Logo isBlack={false} isFull={true}/>
                 <DesktopMenu navItems={navItems}/>
-                <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf}/>
+                <div className={"sm:hidden z-[100]"}>
+                    <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf}/>
+                </div>
+                <MobileMenu {...{ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems}} clickMenuItem={clickMenuItem}/>
             </div>
-            <MobileMenu {...{ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems}} clickMenuItem={clickMenuItem}/>
         </div>
     )
 }

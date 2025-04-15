@@ -12,12 +12,9 @@ interface MobileMenuProps {
 
 export default forwardRef<HTMLDivElement, MobileMenuProps>(
     ({ isShowMenu, navItems, clickMenuItem }: MobileMenuProps, ref: ForwardedRef<HTMLDivElement>) => {
-        const maxHClass = isShowMenu ? 'max-h-[400px]' : '';
         return (
-            <div className={"absolute w-full"}>
-                <nav className={`bg-[#0c0c0c] max-h-[0px] overflow-hidden h-auto duration-1000 ease-in-out ${maxHClass}`
-                }
-                    ref={ref}>
+            <div className={`fixed top-0 left-0 w-full bg-[#000000] ${isShowMenu ? '' : 'hidden'}`}>
+                <nav ref={ref}>
                     <div className={"flex flex-col gap-2 text-xl py-2"}>
                         {
                             navItems.map(({ path, label }: NavItem, index) => (
