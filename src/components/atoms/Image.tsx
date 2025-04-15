@@ -1,11 +1,10 @@
-type ImageProps = {
-    src: string,
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     lazy?: boolean
 }
 
-export default ({src, lazy}: ImageProps): React.ReactNode => {
+const Image: React.FC<ImageProps> = ({ lazy, src, ...rest }: ImageProps) => {
     const attribute = lazy ? 'data-src' : 'src';
-    return (
-        <img {...{[attribute]:src}}></img>
-    )
+    return <img {...{ [attribute]: src }} {...rest} />
 }
+
+export default Image;

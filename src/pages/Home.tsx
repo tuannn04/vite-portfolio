@@ -7,7 +7,9 @@ export default () => {
         <div className={'w-full'}>
             <Section id={'info'}>
                 <div className={"grid sm:grid-cols-2"}>
-                    <Avatar />
+                    <div className="max-w-[60%]">
+                        <Avatar />
+                    </div>
                     <GeneralInfo />
                 </div>
             </Section>

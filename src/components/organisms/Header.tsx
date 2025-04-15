@@ -1,4 +1,4 @@
-import Logo from "../header/Logo.tsx";
+import Logo from "../atoms/Logo";
 import DesktopMenu from "../molecules/DesktopMenu.tsx";
 import {useLocation} from "react-router-dom";
 import useNavItems from "../../hooks/useNavItems";
@@ -18,8 +18,8 @@ export default (): React.ReactNode => {
 
     return (
         <div className={'sticky w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
-            <div className={"flex justify-between px-main-padding py-2"}>
-                <Logo/>
+            <div className={"flex justify-between items-center px-main-padding py-2 h-12"}>
+                <Logo isBlack={false} isFull={true}/>
                 <DesktopMenu navItems={navItems}/>
                 <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf}/>
             </div>
