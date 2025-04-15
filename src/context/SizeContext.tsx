@@ -39,7 +39,7 @@ const useWindowResizeListener = (): ISizeContext => {
 
     const onResizeThrottle = useThrottle(onResize, 100);
 
-    useEventListener('resize', onResizeThrottle);
+    useEventListener('resize', onResizeThrottle as () => void);
 
     return appSize;
 }

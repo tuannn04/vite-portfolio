@@ -7,10 +7,14 @@ import useBurgerMenu from "../../hooks/useBurgerMenu";
 import MobileMenu, { NavLinkClickHandler } from "../molecules/MobileMenu";
 
 
-export default () => {
+export default (): React.ReactNode => {
     const {pathname} = useLocation();
     const navItems = useNavItems(pathname);
-    const {menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, closeMenu} = useBurgerMenu();
+    const {menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, forceCloseMenu} = useBurgerMenu();
+
+    const clickMenuItem: NavLinkClickHandler = (() => {
+        forceCloseMenu()
+    })
 
     return (
         <div className={'sticky w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
@@ -19,7 +23,7 @@ export default () => {
                 <DesktopMenu navItems={navItems}/>
                 <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf}/>
             </div>
-            <MobileMenu {...{ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems}} clickMenuItem={closeMenu as unknown as NavLinkClickHandler}/>
+            <MobileMenu {...{ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems}} clickMenuItem={clickMenuItem}/>
         </div>
     )
 }

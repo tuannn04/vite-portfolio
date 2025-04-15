@@ -4,6 +4,8 @@
   /* Main */
   --main-color: #F0F0F0;
 
+  --main-background-color: #000000;
+
 
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
@@ -11,7 +13,7 @@
 
   color-scheme: light dark;
   color: var(--main-color);
-  background-color: #242424;
+  background-color: var(--main-background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,6 +24,8 @@
 @theme {
   /* Main */
   --color-main: var(--main-color);
+  --color-brown: #b7a5a5;
+
   --spacing-main-padding: 1rem;
 
 

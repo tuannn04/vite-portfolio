@@ -1,10 +1,15 @@
+import { ReactNode } from "react";
 import {SizeContextProvider} from "./SizeContext";
 
 const contexts = [
     SizeContextProvider
 ];
 
-export default ({children}) => {
+type AppContextProps = {
+    children: ReactNode
+}
+
+export default ({children}: AppContextProps) => {
     return contexts.reduce((memo, ContextProvider) => {
         return <ContextProvider>{memo}</ContextProvider>
     }, children)

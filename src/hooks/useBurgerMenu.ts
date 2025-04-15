@@ -29,6 +29,10 @@ export default () => {
         }
     }, [isShowMenu, menuSideBarRef, setIsShowMenu]);
 
+    const forceCloseMenu = useCallback(() => {
+        setIsShowMenu(false);
+    }, [setIsShowMenu]);
+
     useEffect(() => {
         if (!animationDuration) {
             return;
@@ -40,5 +44,5 @@ export default () => {
     useEventListener('click', showMenu, menuIconRef);
     useEventListener('click', closeMenu);
 
-    return { menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, closeMenu }
+    return { menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, forceCloseMenu }
 }
