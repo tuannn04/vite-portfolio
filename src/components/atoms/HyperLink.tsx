@@ -1,4 +1,6 @@
-interface HyperLinkProps extends React.ImgHTMLAttributes<HTMLAnchorElement> {}
+interface HyperLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
+    href: string
+}
 
 const Image: React.FC<HyperLinkProps> = ({  children, ...props }: HyperLinkProps) => {
     return <a {...props} >{children}</a>

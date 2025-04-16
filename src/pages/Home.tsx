@@ -17,10 +17,12 @@ export default () => {
                 <Avatar />
                 <GeneralInfo />
             </div>
-            <div className={"grid sm:grid-cols-2"}>
-                <Avatar />
-                <GeneralInfo />
-            </div>
+            <Section id={'about'}>
+                <div className={"grid sm:grid-cols-2"}>
+                    <Avatar />
+                    <GeneralInfo />
+                </div>
+            </Section>
             <div>
                 This is the Details
             </div>

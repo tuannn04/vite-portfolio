@@ -12,9 +12,9 @@ const baseNavItems: Array<NavItem> = [
         label: 'Home'
     },
     {
-        path: '/about',
+        path: '#about',
         label: 'About'
-    },
+    }
 ];
 
 export default (currentPath: string) => {

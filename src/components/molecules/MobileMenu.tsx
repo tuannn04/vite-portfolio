@@ -1,6 +1,7 @@
 import { ForwardedRef, forwardRef } from "react";
 import { NavItem } from "../../hooks/useNavItems";
 import MenuItem from "../atoms/MenuItem";
+import HyperLink from "../atoms/HyperLink";
 
 export type NavLinkClickHandler = (event: React.MouseEvent<HTMLAnchorElement>) => void;
 
@@ -13,13 +14,24 @@ interface MobileMenuProps {
 export default forwardRef<HTMLDivElement, MobileMenuProps>(
     ({ isShowMenu, navItems, clickMenuItem }: MobileMenuProps, ref: ForwardedRef<HTMLDivElement>) => {
         return (
-            <div className={`fixed top-0 left-0 w-full bg-[#000000] ${isShowMenu ? '' : 'hidden'}`}>
-                <nav ref={ref}>
-                    <div className={"flex flex-col gap-2 text-xl py-2"}>
+            <div className={`fixed top-0 left-0 w-full bg-[#000000] ${isShowMenu ? 'h-screen' : 'h-0'}`}>
+                <nav ref={ref} className={`transition-opacity ease-in-out duration-300 opacity-0 ${isShowMenu ? 'opacity-100' : ''}`}>
+                    <div className={"flex flex-col gap-4 text-xl py-2 h-screen justify-center items-center"}>
                         {
-                            navItems.map(({ path, label }: NavItem, index) => (
-                                <MenuItem to={path} className={""} key={index} onClick={clickMenuItem}>{label}</MenuItem>
-                            ))
+                            navItems.map(({ path, label }: NavItem, index) => {
+                                const isSection = (path.toString().startsWith('#'));
+                                return (
+                                    isSection ? (
+                                        <HyperLink key={index} href={path} className={"text-3xl"} onClick={clickMenuItem}>
+                                            {label}
+                                        </HyperLink>
+                                    ) : (
+                                        <MenuItem key={index} to={path} className={"text-3xl"} onClick={clickMenuItem}>
+                                            {label}
+                                        </MenuItem>
+                                    )
+                                )
+                            })
                         }
                     </div>
                 </nav>

@@ -11,9 +11,12 @@
   line-height: 1.5;
   font-weight: 400;
 
+
   color-scheme: light dark;
   color: var(--main-color);
   background-color: var(--main-background-color);
+  
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
