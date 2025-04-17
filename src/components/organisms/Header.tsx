@@ -12,12 +12,7 @@ export default (): React.ReactNode => {
     const navItems = useNavItems(pathname);
     const {menuIconRef, menuSideBarRef, isShowMenu, isShowingHalf, forceCloseMenu} = useBurgerMenu();
 
-    const clickMenuItem: NavLinkClickHandler = ((event: React.MouseEvent<HTMLAnchorElement>) => {
-        const href = event.currentTarget.getAttribute('href');
-        if (href && href.toString().startsWith('#')) {
-            const id = href.toString().substring(1);
-            console.log(id);
-        }
+    const clickMenuItem: NavLinkClickHandler = (() => {
         forceCloseMenu()
     })
 

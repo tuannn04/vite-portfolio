@@ -4,7 +4,7 @@
   /* Main */
   --main-color: #F0F0F0;
 
-  --main-background-color: #000000;
+  --main-background-color: #1a1c1e;
 
 
   font-family: "Open Sans", sans-serif;
@@ -35,25 +35,4 @@
   /* Burger Menu */
   --width-burger-menu-width: 1.5rem;
   --animate-burger-menu-open: burger-menu-open 10000ms;
-
-  @keyframes burger-menu-open {
-    0% {
-      transform: translate3d(0, 0, 0);
-      /* rotate: 0; */
-    }
-
-    50% {
-      transform: translate3d(0, 0.25rem, 0);
-      /* rotate: 0; */
-    }
-
-    100% {
-      transform: translate3d(0, 0, 0);
-      /* rotate: 45deg; */
-    }
-  }
-
-  @keyframes burger-menu-close {
-    
-  }
 }
