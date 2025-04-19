@@ -26,6 +26,8 @@ export default () => {
             !menuSideBarRef.current?.contains(event.target)
         ) {
             setIsShowMenu(false);
+            setIsShowingHalf(true);
+            clearAnimationTimeout();
         }
     }, [isShowMenu, menuSideBarRef, setIsShowMenu]);
 

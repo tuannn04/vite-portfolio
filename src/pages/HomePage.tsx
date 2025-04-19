@@ -1,18 +1,19 @@
 import GeneralInfo from "../components/molecules/GeneralInfo";
 import Avatar from "../components/molecules/Avatar";
-import Section from "../components/organisms/Section";
+import Section from "../components/molecules/Section";
+import DesktopMenu from "../components/molecules/DesktopMenu";
+import { useLocation } from "react-router-dom";
+import useNavItems from "../hooks/useNavItems";
+import { HomeCard } from "../components/organisms/HomeCard";
 
 export default () => {
+    const { pathname } = useLocation();
+    const navItems = useNavItems(pathname);
     return (
         <div className={'w-full'}>
-            <Section id={'info'}>
-                <div className={"grid sm:grid-cols-2"}>
-                    <div className="max-w-[60%]">
-                        <Avatar />
-                    </div>
-                    <GeneralInfo />
-                </div>
-            </Section>
+            <HomeCard className="pb-24"/>
+            <DesktopMenu navItems={navItems} />
+            
             <div className={"grid sm:grid-cols-2"}>
                 <Avatar />
                 <GeneralInfo />

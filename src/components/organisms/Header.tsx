@@ -1,5 +1,4 @@
 import Logo from "../molecules/Logo";
-import DesktopMenu from "../molecules/DesktopMenu";
 import { useLocation } from "react-router-dom";
 import useNavItems from "../../hooks/useNavItems";
 import BurgerMenu from "../molecules/BurgerMenu";
@@ -18,12 +17,11 @@ export default (): React.ReactNode => {
     });
 
     return (
-        <div className={'sticky w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
+        <div className={'sticky md:relative w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
             <div className={"flex justify-between items-center px-main-padding py-2 h-12"}>
                 <Logo isFull={true} />
-                <div className={"flex justify-between items-center gap-3 sm:hidden z-[100]"}>
-                    <DesktopMenu navItems={navItems} />
-                    <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf} />
+                <div className={"flex justify-between items-center gap-3 z-100"}>
+                    <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf} hideOnDesktop={true}/>
                     <ModeToggle />
                 </div>
                 <MobileMenu {...{ ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems }} clickMenuItem={clickMenuItem} />

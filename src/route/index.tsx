@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from "../pages/Home.tsx";
+import HomePage from "../pages/HomePage";
 import React from "react";
-const About = React.lazy(() => import("../pages/About.tsx"));
+const AboutPage = React.lazy(() => import("../pages/About.tsx"));
 
 type AppRouterProps = {
     header: () => React.ReactNode
@@ -12,8 +12,8 @@ export default ({header: HeaderComponent}: AppRouterProps) => {
         <BrowserRouter>
             <HeaderComponent/>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/about" element={<About/>}/>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
             </Routes>
         </BrowserRouter>
     )
