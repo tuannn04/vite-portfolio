@@ -34,7 +34,7 @@ interface MobileMenuProps {
 export default forwardRef<HTMLDivElement, MobileMenuProps>(
     ({ isShowMenu, navItems, clickMenuItem }: MobileMenuProps, ref: ForwardedRef<HTMLDivElement>) => {
         return (
-            <div className={`fixed md:hidden top-0 left-0 w-full bg-light dark:bg-black ${isShowMenu ? 'h-screen' : 'h-0'}`}>
+            <div className={`fixed end-mobile:hidden top-0 left-0 w-full bg-main dark:bg-black ${isShowMenu ? 'h-screen' : 'h-0'}`}>
                 <nav ref={ref} className={`transition-opacity ease-in-out duration-300 opacity-0  h-full  ${isShowMenu ? 'opacity-100' : ''}`}>
                     <div className={`flex-col gap-4 text-xl h-full justify-center items-center ${isShowMenu ? 'flex' : 'hidden'}  `}>
                         {

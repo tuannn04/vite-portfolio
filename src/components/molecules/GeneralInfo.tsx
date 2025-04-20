@@ -4,7 +4,7 @@ export default () => {
     return (
         <div className={'w-[100%]'}>
             <ul>
-                <li className="text-main text-sm uppercase">
+                <li className="text-sm uppercase">
                     <h1>{GeneralInfo.role}</h1>
                 </li>
             </ul>

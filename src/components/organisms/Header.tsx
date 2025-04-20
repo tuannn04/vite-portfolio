@@ -17,8 +17,8 @@ export default (): React.ReactNode => {
     });
 
     return (
-        <div className={'sticky md:relative w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
-            <div className={"flex justify-between items-center px-main-padding py-2 h-12"}>
+        <div className={'sticky end-mobile:relative w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
+            <div className={"flex justify-between items-center px-mobile-padding py-2 h-12"}>
                 <Logo isFull={true} />
                 <div className={"flex justify-between items-center gap-3 z-100"}>
                     <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf} hideOnDesktop={true}/>

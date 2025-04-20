@@ -8,7 +8,7 @@ type BurgerMenuProps = ComponentPropsWithoutRef<"div"> & Omit<BurgerMenuLineProp
 export default forwardRef<HTMLDivElement, BurgerMenuProps>(
     ({ hideOnDesktop, ...props }: BurgerMenuProps, ref: ForwardedRef<HTMLDivElement>) => {
         return (
-            <div className={`flex flex-col justify-center h-6 w-6 space-y-2 group top-5 right-5 ${hideOnDesktop ? 'md:hidden' : ''}`}
+            <div className={`flex flex-col justify-center h-6 w-6 space-y-2 group top-5 right-5 ${hideOnDesktop ? 'end-mobile:hidden' : ''}`}
                 ref={ref}>
                 <BurgerMenuLine {...props} isTop={true} />
                 <BurgerMenuLine {...props} isTop={false} />

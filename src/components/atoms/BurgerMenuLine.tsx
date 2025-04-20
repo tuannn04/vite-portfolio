@@ -20,6 +20,6 @@ export default ({ isShowMenu, isShowingHalf, isTop }: BurgerMenuLineProps) => {
     const position = isTop ? 'Top' : 'Bottom';
     const animationKey = isShowMenu || isShowingHalf ? animationState + position : '';
     
-    const className = `block h-[1px] w-burger-menu-width bg-grey dark:bg-light duration-300 transform ${animationClasses[animationKey]}`;
+    const className = `block h-[1px] w-burger-menu-width bg-text duration-300 transform ${animationClasses[animationKey]}`;
     return <span className={className}></span>
 }

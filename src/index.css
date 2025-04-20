@@ -2,12 +2,16 @@
 
 :root {
   font-family: "Open Sans", sans-serif;
+  
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  background-color: var(--color-main);
+  color: var(--color-text);
+
+  --color-main: #ffffff; /* main background color */
+  --color-text: #000000; /* main text color */
   
-  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,16 +19,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme="dark"] {
+  --color-main: #1a1c1e; /* main background color */
+  --color-text: #ffffff; /* main text color */
+}
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  /* Main */
-  --color-main: var(--main-color);
-  --color-light: #f0f0f0;
-  --color-brown: #b7a5a5;
-  --color-grey: #1a1c1e;
+  /* Breakpoint */
+  --breakpoint-end-mobile: 56rem;
 
-  --spacing-main-padding: 1rem;
+  /* Main */
+  --color-main: var(--color-main);
+  --color-text: var(--color-text);
+  
+  --spacing-mobile-padding: 1rem;
 
   /* Burger Menu */
   --width-burger-menu-width: 1.5rem;

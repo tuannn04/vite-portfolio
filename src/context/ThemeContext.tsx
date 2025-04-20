@@ -13,7 +13,7 @@ function setLocalStorageMode(mode: string) {
 interface IThemeContext {
     mode: string;
     setMode: Function;
-    toggleMode: Function;
+    toggleMode: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const defaultContextValue = { mode: getModeFromLocalStorage(), setMode: () => { }, toggleMode: () => { } };
@@ -26,7 +26,7 @@ interface IThemeContextProviderProps {
 
 export const ThemeContextProvider = ({ children }: IThemeContextProviderProps): ReactNode => {
     const [mode, setMode] = useState<string>(getModeFromLocalStorage());
-    const toggleMode = useCallback(() => {
+    const toggleMode = useCallback<React.MouseEventHandler<HTMLButtonElement>>(() => {
         setMode(mode => mode === MODE_DARK ? MODE_LIGHT : MODE_DARK);
     }, [setMode])
 

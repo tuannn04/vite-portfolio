@@ -38,7 +38,7 @@ interface DesktopMenuProps {
 export default ({ navItems }: DesktopMenuProps) => useMemo<React.JSX.Element>(() => {
     const lastIndex = navItems.length - 1;
     return (
-        <div className={"hidden md:flex items-center justify-center sticky top-10"}>
+        <div className={"hidden end-mobile:flex items-center justify-center sticky top-10"}>
             <nav className={'flex flex-row gap-4 items-center bg-[#f4f4f4e9] backdrop-blur-xs dark:bg-[#0000000a] dark:backdrop-blur-xl p-3 rounded-full border-[1px]'}>
                 {
                     navItems.map(({ path, label }: NavItem, index) => {
