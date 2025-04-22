@@ -5,6 +5,7 @@ import BurgerMenu from "../molecules/BurgerMenu";
 import useBurgerMenu from "../../hooks/useBurgerMenu";
 import MobileMenu, { NavLinkClickHandler } from "../molecules/MobileMenu";
 import ModeToggle from "../molecules/ModeToggle";
+import Section from "../molecules/Section";
 
 
 export default (): React.ReactNode => {
@@ -17,15 +18,16 @@ export default (): React.ReactNode => {
     });
 
     return (
-        <div className={'sticky end-mobile:relative w-full top-0 bg-[#0000001a] backdrop-blur-xl'}>
-            <div className={"flex justify-between items-center px-mobile-padding py-2 h-12"}>
+        <Section id="header"
+            className={'sticky end-mobile:relative w-full top-0 bg-main-accent backdrop-blur-main-accent'}>
+            <div className={"flex justify-between items-center py-2 h-12"}>
                 <Logo isFull={true} />
                 <div className={"flex justify-between items-center gap-3 z-100"}>
-                    <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf} hideOnDesktop={true}/>
+                    <BurgerMenu ref={menuIconRef} isShowMenu={isShowMenu} isShowingHalf={isShowingHalf} hideOnDesktop={true} />
                     <ModeToggle />
                 </div>
                 <MobileMenu {...{ ref: menuSideBarRef, isShowMenu, isShowingHalf, navItems }} clickMenuItem={clickMenuItem} />
             </div>
-        </div>
+        </Section>
     )
 }

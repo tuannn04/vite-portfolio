@@ -11,7 +11,7 @@ export default () => {
     const navItems = useNavItems(pathname);
     return (
         <div className={'w-full'}>
-            <HomeCard className="pb-24"/>
+            <HomeCard className=""/>
             <DesktopMenu navItems={navItems} />
             
             <div className={"grid sm:grid-cols-2"}>

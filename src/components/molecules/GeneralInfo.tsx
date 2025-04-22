@@ -2,12 +2,15 @@ import GeneralInfo from "../../constants/GeneralInfo";
 
 export default () => {
     return (
-        <div className={'w-[100%]'}>
-            <ul>
-                <li className="text-sm uppercase">
-                    <h1>{GeneralInfo.role}</h1>
-                </li>
-            </ul>
+        <div className={'w-full flex flex-col justify-around'}>
+            <div className="flex flex-col gap-6">
+                <div className="bg-[image:var(--color-special)] bg-clip-text text-transparent">
+                    {GeneralInfo.role}
+                </div>
+                <div className="text-5xl">
+                    {GeneralInfo.description}
+                </div>
+            </div>
         </div>
     )
 }

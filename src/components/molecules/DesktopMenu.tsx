@@ -26,7 +26,7 @@ function DesktopMenuItemWithDivider(props: DesktopMenuItemProps) {
     return (
         <>
             <DesktopMenuItem {...props} />
-            <div className="bg-[#0000001a] dark:bg-[#ffffff1a] w-[1px] h-6"></div>
+            <div className="bg-divider w-[1px] h-6"></div>
         </>
     )
 }
@@ -39,7 +39,7 @@ export default ({ navItems }: DesktopMenuProps) => useMemo<React.JSX.Element>(()
     const lastIndex = navItems.length - 1;
     return (
         <div className={"hidden end-mobile:flex items-center justify-center sticky top-10"}>
-            <nav className={'flex flex-row gap-4 items-center bg-[#f4f4f4e9] backdrop-blur-xs dark:bg-[#0000000a] dark:backdrop-blur-xl p-3 rounded-full border-[1px]'}>
+            <nav className={'flex flex-row gap-4 items-center bg-main-accent backdrop-blur-main-accent p-3 rounded-full border-[1px]'}>
                 {
                     navItems.map(({ path, label }: NavItem, index) => {
                         const isFirst = index === 0;

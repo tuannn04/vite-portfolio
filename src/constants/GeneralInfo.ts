@@ -7,7 +7,8 @@ type GeneralInfoObject = {
 const GeneralInfo: GeneralInfoObject = {
     name: 'John Doe',
     avatar: Avatar,
-    role: "Developer"
+    role: "This is the role",
+    description: "This is a short description describe a little bit your-self"
 }
 
 export default GeneralInfo;

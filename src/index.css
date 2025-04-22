@@ -9,19 +9,27 @@
   background-color: var(--color-main);
   color: var(--color-text);
 
-  --color-main: #ffffff; /* main background color */
-  --color-text: #000000; /* main text color */
-  
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  --color-main: #ffffff; /* main background color */
+  --color-text: #000000; /* main text color */
+  --color-main-accent: #e3e3e3e9;
+  --blur-main-accent: 4px;
+  --color-divider: #0000001a;
+  --color-special: linear-gradient(to right, var(--color-sky-300), var(--color-green-300));
 }
 
 [data-theme="dark"] {
   --color-main: #1a1c1e; /* main background color */
   --color-text: #ffffff; /* main text color */
+  --color-main-accent: #0000001a;
+  --blur-main-accent: 24px;
+  --color-divider: #ffffff1a;
+  --color-special: linear-gradient(to right, var(--color-sky-300), var(--color-green-300));
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -33,10 +41,15 @@
   /* Main */
   --color-main: var(--color-main);
   --color-text: var(--color-text);
+  --color-main-accent: var(--color-main-accent);
+  --blur-main-accent: var(--blur-main-accent);
+  --color-divider: var(--color-divider);
+  --color-special: var(--color-special);
   
   --spacing-mobile-padding: 1rem;
+  --spacing-end-mobile-padding: 5rem;
+  --spacing-end-2xl-padding: 10rem;
 
   /* Burger Menu */
   --width-burger-menu-width: 1.5rem;
-  --animate-burger-menu-open: burger-menu-open 10000ms;
 }

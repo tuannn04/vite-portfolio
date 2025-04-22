@@ -10,8 +10,8 @@ interface HomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function HomeCard({className}: HomeCardProps) {
     return (
         <Section id="home" className={className}>
-            <div className={"grid lg:grid-cols-2"}>
-                <div className="max-w-[60%]">
+            <div className={"grid end-mobile:grid-cols-2"}>
+                <div className="max-w-[60cqw] end-mobile:max-w-[50cqw]">
                     <Avatar />
                 </div>
                 <GeneralInfo />
