@@ -13,11 +13,15 @@ export default () => {
         animationTimeout.current && clearTimeout(animationTimeout.current)
     }, [animationTimeout])
 
-    const showMenu = useCallback(() => {
-        setIsShowMenu(isShow => !isShow);
+    const startAnimation = useCallback(() => {
         setIsShowingHalf(true);
         clearAnimationTimeout();
-    }, [setIsShowMenu, setIsShowingHalf, animationTimeout]);
+    }, []);
+
+    const showMenu = useCallback(() => {
+        setIsShowMenu(isShow => !isShow);
+        startAnimation();
+    }, []);
 
     const closeMenu = useCallback((event: Event): void => {
         if (isShowMenu &&
@@ -26,14 +30,14 @@ export default () => {
             !menuSideBarRef.current?.contains(event.target)
         ) {
             setIsShowMenu(false);
-            setIsShowingHalf(true);
-            clearAnimationTimeout();
+            startAnimation();
         }
-    }, [isShowMenu, menuSideBarRef, setIsShowMenu]);
+    }, [isShowMenu, menuSideBarRef]);
 
     const forceCloseMenu = useCallback(() => {
         setIsShowMenu(false);
-    }, [setIsShowMenu]);
+        startAnimation();
+    }, []);
 
     useEffect(() => {
         if (!animationDuration) {

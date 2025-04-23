@@ -20,7 +20,7 @@
   --color-main-accent: #e3e3e3e9;
   --blur-main-accent: 4px;
   --color-divider: #0000001a;
-  --color-special: linear-gradient(to right, var(--color-sky-300), var(--color-green-300));
+  --color-special: linear-gradient(to right, var(--color-rose-300), var(--color-fuchsia-300));
 }
 
 [data-theme="dark"] {
