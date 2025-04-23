@@ -15,7 +15,7 @@ export default () => {
                 <div className="text-lg">
                     {GeneralInfo.purpose}
                 </div>
-                <SocialCard className="flex flex-row"/>
+                <SocialCard/>
             </div>
         </div>
     )
