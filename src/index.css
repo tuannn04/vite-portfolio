@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   
   line-height: 1.5;
   font-weight: 400;
@@ -35,6 +36,9 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
+  /* Fonts */
+  --font-dm-sans: "DM Sans", sans-serif;
+
   /* Breakpoint */
   --breakpoint-end-mobile: 56rem;
 
@@ -46,9 +50,7 @@
   --color-divider: var(--color-divider);
   --color-special: var(--color-special);
   
-  --spacing-mobile-padding: 1rem;
   --spacing-end-mobile-padding: 5rem;
-  --spacing-end-2xl-padding: 10rem;
 
   /* Burger Menu */
   --width-burger-menu-width: 1.5rem;

@@ -3,6 +3,7 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const Image: React.FC<ImageProps> = ({ lazy, src, ...rest }: ImageProps) => {
+    console.log(rest);
     const attribute = lazy ? 'data-src' : 'src';
     return <img {...{ [attribute]: src }} {...rest} />
 }

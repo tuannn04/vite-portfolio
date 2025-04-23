@@ -7,10 +7,10 @@ interface SocialCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function SocialCard({ className }: SocialCardProps) {
     return (
         <div className={className}>
-            <ul className="flex flex-row gap-2 h-10">
+            <ul className="flex flex-row gap-3 h-10 end-mobile:h-12">
                 {
-                    SocialNetworkConstant.map((item) => {
-                        return <SocialIcon image={item.image} href={item.href}/>
+                    SocialNetworkConstant.map((item, index) => {
+                        return <SocialIcon key={index} image={item.image} href={item.href} alt={item.alt}/>
                     })
                 }
             </ul>
