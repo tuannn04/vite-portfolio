@@ -4,12 +4,12 @@ import SocialCard from "./SocialCard";
 
 export default () => {
     return (
-        <div className={'w-full flex flex-col justify-around'}>
+        <div className={'w-full flex flex-col justify-around mt-6'}>
             <div className="flex flex-col gap-6">
                 <GradientTextCard className="uppercase text-xs tracking-[0.125rem] font-semibold">
                     {GeneralInfo.role}
                 </GradientTextCard>
-                <div className="text-4xl sm:text-5xl">
+                <div className="text-4xl sm:text-5xl font-medium">
                     {GeneralInfo.description}
                 </div>
                 <div className="text-lg">

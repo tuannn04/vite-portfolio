@@ -25,7 +25,7 @@
 }
 
 [data-theme="dark"] {
-  --color-main: #1a1c1e; /* main background color */
+  --color-main: #111111; /* main background color */
   --color-text: #ffffff; /* main text color */
   --color-main-accent: #0000001a;
   --blur-main-accent: 24px;

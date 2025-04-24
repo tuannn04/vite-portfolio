@@ -1,4 +1,4 @@
-import Avatar from "../assets/black-square.png";
+import Avatar from "../assets/avatar-black-white.png";
 
 type GeneralInfoObject = {
     [key: string]: any
